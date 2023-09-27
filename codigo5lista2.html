@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Verificador de Múltiplos</title>
+</head>
+<body>
+    <h1>Verificador de Múltiplos</h1>
+    <p>Informe dois valores:</p>
+    <input type="number" id="valorA" placeholder="Valor A">
+    <input type="number" id="valorB" placeholder="Valor B">
+    <button onclick="verificarMultiplos()">Verificar</button>
+
+    <h2>Resultado:</h2>
+    <p>Os valores informados: <span id="resultado"></span></p>
+
+    <script>
+        function verificarMultiplos() {
+            var valorA = parseInt(document.getElementById("valorA").value);
+            var valorB = parseInt(document.getElementById("valorB").value);
+
+            if (valorA % valorB === 0 || valorB % valorA === 0) {
+                document.getElementById("resultado").textContent = "São múltiplos";
+            } else {
+                document.getElementById("resultado").textContent = "Não são múltiplos";
+            }
+        }
+    </script>
+</body>
+</html>
+

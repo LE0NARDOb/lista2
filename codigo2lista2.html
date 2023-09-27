@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <p>Informe as notas das três provas:</p>
+    <input type="number" id="nota1" placeholder="Nota da Primeira Prova"><br>
+    <input type="number" id="nota2" placeholder="Nota da Segunda Prova"><br>
+    <input type="number" id="nota3" placeholder="Nota da Terceira Prova"><br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <h2>Resultado:</h2>
+    <p>Média Final: <span id="media"></span></p>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        function calcularMedia() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+
+            var media = (nota1 * 4 + nota2 * 3 + nota3 * 3) / 10;
+
+            document.getElementById("media").textContent = media.toFixed(2);
+
+            if (media >= 7) {
+                document.getElementById("resultado").textContent = "APROVADO";
+            } else if (media >= 5) {
+                document.getElementById("resultado").textContent = "RECUPERAÇÃO";
+            } else {
+                document.getElementById("resultado").textContent = "REPROVADO";
+            }
+        }
+    </script>
+</body>
+</html>
